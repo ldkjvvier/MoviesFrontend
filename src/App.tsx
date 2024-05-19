@@ -10,7 +10,6 @@ export const App = () => {
 			})
 				.then((response) => response.json())
 				.then((data) => setMoviesData(data))
-			console.log(moviesData)
 		} catch (error) {
 			console.error(error)
 		}
@@ -36,12 +35,13 @@ export const App = () => {
 
 	useEffect(() => {
 		getAllMovies()
+		console.log(moviesData);
 	}, [])
 	return (
 		<div className="px-12">
 			<h1 className="font-bold my-12 mx-3">Movie List</h1>
 			<ul>
-				<li className="grid grid-cols-6 grid-flow-row gap-8">
+				<li className="grid grid-cols-4 grid-flow-row gap-8">
 					{moviesData.map((movie) => {
 						return (
 							<div
@@ -64,7 +64,15 @@ export const App = () => {
 										<h4 className="text-sm text-slate-300">
 											{movie.description}
 										</h4>
-										<div></div>
+										<div>
+											<ul>
+												{
+													movie.genre.map((genre, index) => {
+														return <li key={index}>{genre}</li>
+													})
+												}
+											</ul>
+										</div>
 										<p>{movie.year}</p>
 									</div>
 								</div>
@@ -84,7 +92,7 @@ interface MovieType {
 	id: number
 	title: string
 	year: number
-	genre: string
+	genre: string[]
 	rate: number
 	poster: string
 	description: string
