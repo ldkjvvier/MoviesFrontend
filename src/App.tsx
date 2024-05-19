@@ -1,35 +1,77 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from 'react'
 
-function App() {
-  const [count, setCount] = useState(0)
+export const App = () => {
+	const [moviesData, setMoviesData] = useState<MovieType[]>([])
+	useEffect(() => {
+		try {
+			fetch('http://localhost:3000/movies/', {
+				method: 'GET',
+			})
+				.then((response) => response.json())
+				.then((data) => setMoviesData(data))
+			console.log(moviesData)
+		} catch (error) {
+			console.error(error)
+		}
+	}, [])
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+	const deleteMovie = async (id: number) => {
+		try {
+			fetch(`http://localhost:3000/movies/${id}`, {
+				method: 'DELETE',
+			})
+				.then((response) => response.json())
+				.then((data) => console.log(data))
+        if (moviesData) {
+          const newMoviesData = moviesData.filter((movie) => movie.id !== id)
+          setMoviesData(newMoviesData)
+        }
+		} catch (error) {
+			console.error(error)
+		}
+	}
+	return (
+		<>
+			<h1>Movie List</h1>
+			<ul>
+				<li className="grid grid-cols-5 grid-flow-row gap-8">
+					{moviesData.map((movie) => {
+						return (
+							<div
+								key={movie.id}
+								className="text-lg font-semibold text-center"
+							>
+								<div className="group/movie relative">
+									<img
+										src={movie.poster}
+										alt={movie.title}
+										className="group-hover/movie:opacity-30 transition duration-150 ease-in-out h-96 w-full object-cover"
+									/>
+									<div className="absolute invisible group-hover/movie:visible top-0 w-full h-full ">
+										<h2>{movie.title}</h2>
+										<p>
+											{movie.year} <span>IMDB: {movie.rate}</span>
+										</p>
+									</div>
+								</div>
+								<h2>{movie.title}</h2>
+								<button onClick={() => deleteMovie(movie.id)}>
+									Delete Movie
+								</button>
+							</div>
+						)
+					})}
+				</li>
+			</ul>
+		</>
+	)
 }
 
-export default App
+interface MovieType {
+	id: number
+	title: string
+	year: number
+	genre: string
+	rate: number
+	poster: string
+}
