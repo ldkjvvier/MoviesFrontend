@@ -1,10 +1,10 @@
 import { movieDuration } from '../utils/MovieDuration'
 import { useFetchMovies } from '../hooks/useFetchMovies'
+import { Loading } from '../../../components/Loader/Loading'
 export const MoviesCard = () => {
 
 	const { movies, loading, error } = useFetchMovies()
-
-	if (loading) return <p>Loading...</p>
+	if (loading) return <Loading />
 	if (error) return <p>{error}</p>
 
 	return (
