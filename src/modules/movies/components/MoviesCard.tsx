@@ -1,6 +1,6 @@
 import { movieDuration } from '../utils/MovieDuration'
 import { useFetchMovies } from '../hooks/useFetchMovies'
-import { Loading } from '../../../components/Loader/Loading'
+import { Loading } from '../../core/components/Loader/Loading'
 export const MoviesCard = () => {
 
 	const { movies, loading, error } = useFetchMovies()
@@ -16,14 +16,14 @@ export const MoviesCard = () => {
 						return (
 							<div
 								key={movie.id}
-								className="text-lg font-semibold text-center hover:scale-110 transition-all duration-200 ease-in-out"
+								className="text-lg font-semibold text-center hover:scale-125 transition-all duration-200 ease-in-out"
 							>
 								<div className="group/movie relative">
 									<picture>
 										<img
 											src={movie.poster}
 											alt={movie.title}
-											className="group-hover/movie:opacity-10 h-80 w-full object-cover rounded-lg"
+											className="group-hover/movie:opacity-10 h-64 w-full object-cover rounded-lg"
 										/>
 									</picture>
 									<div className="absolute invisible group-hover/movie:visible top-0 w-full h-full flex flex-col p-3 text-start">
