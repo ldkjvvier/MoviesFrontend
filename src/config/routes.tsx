@@ -1,4 +1,4 @@
-import { Home } from '@/modules/movies/routes/Home'
+import Home from '@/modules/movies/routes/Home'
 import { createBrowserRouter } from 'react-router-dom'
 
 const routerConfig = [
