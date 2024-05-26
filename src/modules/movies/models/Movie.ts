@@ -1,5 +1,5 @@
-export interface MovieType {
-	id: number
+export interface Movie {
+	id: string
 	title: string
 	year: number
 	genre: string[]
@@ -9,4 +9,12 @@ export interface MovieType {
 	duration: number
 	age: string
 	type: string
+	trailer: string
+	created_at: string
+}
+
+export interface MoviesData {
+	topRatedMovies: Movie[]
+	newMovies: Movie[]
+	animatedMovies: Movie[]
 }
