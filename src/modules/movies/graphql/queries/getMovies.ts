@@ -2,7 +2,7 @@ import { gql } from '@apollo/client'
 import { MOVIE_DATA } from '../fragments/movieFragment'
 
 export const GET_MOVIES = gql`
-	query TopRatedMovies {
+	query Movies {
 		topRatedMovies {
 			${MOVIE_DATA}
 		}
