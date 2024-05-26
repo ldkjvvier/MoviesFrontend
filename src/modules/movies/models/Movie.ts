@@ -17,4 +17,5 @@ export interface MoviesData {
 	topRatedMovies: Movie[]
 	newMovies: Movie[]
 	animatedMovies: Movie[]
+	topDramaMovies: Movie[]
 }

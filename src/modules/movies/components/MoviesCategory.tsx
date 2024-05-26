@@ -4,15 +4,15 @@ import { MoviesCard } from "./MoviesCard";
 import { useMovies } from "../hooks/useMovies";
 import { Movie } from "../models/Movie";
 export const MoviesCaterogy = () => {
-	const { movies, loading, error } = useMovies()
+	const { movies, loading } = useMovies()
 
 	if (loading) return <Loading />
-	if (error) return <h1 className="text-white">{error.message}</h1>
 
 	const categories = [
 		{ title: "Top Movies", movies: movies?.topRatedMovies },
 		{ title: "New Movies", movies: movies?.newMovies },
 		{ title: "Animated Movies", movies: movies?.animatedMovies },
+		{ title: "Top Drama", movies: movies?.topDramaMovies },
 	]
 
 	return (
