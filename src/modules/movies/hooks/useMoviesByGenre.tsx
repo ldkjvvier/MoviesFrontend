@@ -6,5 +6,7 @@ export const useMovies = () => {
 	const { data, loading, error } = useQuery<Movie>(
 		GET_MOVIES_BY_GENRE
 	)
-	return { movies: data, loading, error }
+	if (error) window.location.href = '/404'
+
+	return { movies: data, loading }
 }
