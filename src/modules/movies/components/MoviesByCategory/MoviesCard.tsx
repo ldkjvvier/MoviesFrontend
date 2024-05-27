@@ -1,12 +1,12 @@
-import { movieDuration } from '../utils/MovieFixDuration.utilities'
-import { Movie } from '../models/Movie'
+import { movieDuration } from '../../utils/MovieFixDuration.utilities'
+import { Movie } from '../../models/Movie'
 export const MoviesCard = ({ movie }: { movie: Movie }) => {
 	return (
-		<section className="px-3 overflow-visible">
+		<section className="mx-3 my-3 overflow-visible ">
 			<ul className="grid grid-flow-col grid-rows-0 gap-8">
 				<li
 					key={movie.id}
-					className="text-lg font-semibold text-center hover:scale-110 transition-all duration-200 ease-in-out"
+					className="text-lg font-semibold text-center "
 				>
 					<figure className="group/movie relative">
 						<img

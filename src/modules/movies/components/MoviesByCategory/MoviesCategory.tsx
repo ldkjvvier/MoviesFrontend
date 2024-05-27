@@ -1,8 +1,8 @@
 import { Loading } from "@/modules/core/components/loader/Loading";
-import { MoviesCarousel } from "./carousel/MoviesCarousel";
+import { MoviesCarousel } from "../carousel/MoviesCarousel";
 import { MoviesCard } from "./MoviesCard";
-import { useMovies } from "../hooks/useMovies";
-import { Movie } from "../models/Movie";
+import { useMovies } from "../../hooks/useMovies";
+import { Movie } from "../../models/Movie";
 export const MoviesCaterogy = () => {
 	const { movies, loading } = useMovies()
 
@@ -23,7 +23,7 @@ export const MoviesCaterogy = () => {
 						<MoviesCarousel
 							key={category.title}
 							title={category.title}
-							deviceType="desktop"
+							deviceType="mobile"
 						>
 							{category.movies?.map((movie: Movie) => (
 								<MoviesCard key={movie.id} movie={movie} />
