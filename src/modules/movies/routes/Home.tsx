@@ -1,12 +1,14 @@
-import { Header } from "../../core/components/header/Header"
-import { MoviesCaterogy } from "../components/MoviesCategory"
-import React from "react"
+import { Header } from '../../core/components/header/Header'
+import { MoviesCaterogy } from '../components/MoviesByCategory/MoviesCategory'
+import React from 'react'
 const Home: React.FC = () => {
-  return (
-		<div>
+	return (
+		<>
 			<Header />
-      <MoviesCaterogy />
-		</div>
+			<main className='pt-16 '>
+				<MoviesCaterogy />
+			</main>
+		</>
 	)
 }
 
