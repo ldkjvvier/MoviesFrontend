@@ -2,17 +2,17 @@ import { movieDuration } from '../../utils/MovieFixDuration.utilities'
 import { Movie } from '../../models/Movie'
 export const MoviesCard = ({ movie }: { movie: Movie }) => {
 	return (
-		<section className="mx-3 my-3 overflow-visible ">
+		<section className="mx-3 my-3">
 			<ul className="grid grid-flow-col grid-rows-0 gap-8">
 				<li
 					key={movie.id}
 					className="text-lg font-semibold text-center "
 				>
-					<figure className="group/movie relative">
+					<figure className="group/movie relative aspect-square">
 						<img
 							src={movie.poster}
 							alt={movie.title}
-							className="group-hover/movie:opacity-10 h-44 w-96 object-cover rounded-lg snap-center pointer-events-none"
+							className="group-hover/movie:opacity-10 w-full h-full object-cover rounded-lg snap-center pointer-events-none"
 						/>
 						<figcaption className="absolute invisible group-hover/movie:visible top-0 w-full h-full flex flex-col p-3 text-start">
 							<h3 className="mb-3 text-base">{movie.title}</h3>
