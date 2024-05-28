@@ -1,0 +1,45 @@
+.carousel-container{
+  overflow: visible;
+}
+
+
+
+/* Custom Arrows */
+.react-multiple-carousel__arrow.react-multiple-carousel__arrow--right {
+  right: -15px;
+  border-radius: 0 5px 5px 0;
+  scale: 50px;
+}
+
+.react-multiple-carousel__arrow.react-multiple-carousel__arrow--left {
+  left: -15px;
+  border-radius: 5px 0 0 5px;
+  scale: 50px;
+}
+
+
+
+/* DOTS */
+.custom-dot-list-style{
+  bottom: -15px;
+  gap: 5px;
+  color: white;
+}
+.react-multi-carousel-dot button{
+  background-color: gray;
+  border: 1px solid gray;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  opacity: 50%;
+}
+.react-multi-carousel-dot--active button{
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  opacity: 50%;
+  overflow: visible;
+
+}
