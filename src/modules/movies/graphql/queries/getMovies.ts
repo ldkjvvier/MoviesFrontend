@@ -15,5 +15,8 @@ export const GET_MOVIES = gql`
 		topDramaMovies {
 			${MOVIE_DATA}
 		}
+		terrorMovies {
+			${MOVIE_DATA}
+		}
 	}
 `

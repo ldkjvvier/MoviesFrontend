@@ -33,6 +33,7 @@ export const MoviesCaterogy = () => {
 		{ title: 'New Movies', movies: movies?.newMovies },
 		{ title: 'Animated Movies', movies: movies?.animatedMovies },
 		{ title: 'Top Drama', movies: movies?.topDramaMovies },
+		{ title: 'Terror Movies', movies: movies?.terrorMovies },
 	]
 
 	const responsive = {
