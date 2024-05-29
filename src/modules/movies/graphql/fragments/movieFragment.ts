@@ -8,4 +8,5 @@ export const MOVIE_DATA = `
 	rate
 	trailer
 	isNew
+	type
 `
