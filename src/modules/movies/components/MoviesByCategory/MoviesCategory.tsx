@@ -80,7 +80,6 @@ export const MoviesCaterogy = () => {
 								dotListClass="custom-dot-list-style"
 								itemClass="carousel-item-padding-30-px"
 								partialVisible={true}
-								partialVisbile={true}
 							>
 								{category.movies?.map((movie: Movie) => (
 									<MoviesCard key={movie.id} movie={movie} />
