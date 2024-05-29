@@ -6,10 +6,22 @@ import { SerieIcon } from '../../../../components/icons/Serie'
 
 export const HeaderNav = () => {
 	const routes = [
-		{ path: '/',       name: 'Home',   icon: <HomeIcon   size={5} /> },
-		{ path: '/search', name: 'search', icon: <SearchIcon size={5} />,},
-		{ path: '/movies', name: 'Movies', icon: <MovieIcon  size={5} /> },
-		{ path: '/series', name: 'Series', icon: <SerieIcon  size={5} /> },
+		{ path: '/', name: 'Home', icon: <HomeIcon size={5} /> },
+		{
+			path: '/browse/search',
+			name: 'search',
+			icon: <SearchIcon size={5} />,
+		},
+		{
+			path: '/browse/movies',
+			name: 'Movies',
+			icon: <MovieIcon size={5} />,
+		},
+		{
+			path: '/browse/series',
+			name: 'Series',
+			icon: <SerieIcon size={5} />,
+		},
 	]
 	return (
 		<div className="flex items-center">
