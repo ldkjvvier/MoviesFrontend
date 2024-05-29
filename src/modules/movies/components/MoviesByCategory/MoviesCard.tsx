@@ -8,7 +8,7 @@ export const MoviesCard = ({ movie }: { movie: Movie }) => {
 					key={movie.id}
 					className="text-lg font-semibold text-center "
 				>
-					<figure className="group/movie relative aspect-square">
+					<figure className="group/movie relative aspect-square hover:scale-105 transition-all ease-in-out duration-200">
 						<img
 							src={movie.poster}
 							alt={movie.title}
